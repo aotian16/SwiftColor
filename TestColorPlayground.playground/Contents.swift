@@ -23,19 +23,19 @@ public extension UIColor {
             }
             
             let startIndex = hex.startIndex
-            let endIndex = hex.endIndex
+            let endIndex   = hex.endIndex
             
-            let redRange = Range(start: startIndex, end: startIndex.advancedBy(2))
+            let redRange   = Range(start: startIndex, end: startIndex.advancedBy(2))
             let greenRange = Range(start: startIndex.advancedBy(2), end: startIndex.advancedBy(4))
-            let blueRange = Range(start: startIndex.advancedBy(4), end: endIndex)
-            
-            let redHex = hex.substringWithRange(redRange)
+            let blueRange  = Range(start: startIndex.advancedBy(4), end: endIndex)
+
+            let redHex   = hex.substringWithRange(redRange)
             let greenHex = hex.substringWithRange(greenRange)
-            let blueHex = hex.substringWithRange(blueRange)
+            let blueHex  = hex.substringWithRange(blueRange)
             
-            let redInt = Int(redHex,radix: 16)!
+            let redInt   = Int(redHex,radix: 16)!
             let greenInt = Int(greenHex,radix: 16)!
-            let blueInt = Int(blueHex,radix: 16)!
+            let blueInt  = Int(blueHex,radix: 16)!
             
             self.init(red: CGFloat(redInt) / 255.0, green: CGFloat(greenInt) / 255.0, blue: CGFloat(blueInt) / 255.0, alpha: CGFloat(alpha))
         }
@@ -52,6 +52,8 @@ public extension UIColor {
 }
 
 
-let color1 = UIColor(hexString: "#66ccff") // default alpha = 1
-let color2 = UIColor(hexString: "#66ccff", alpha: 0.5) // with alpha param
-let color3 = UIColor(hexString: "#error", defaultColor: UIColor.redColor()) // return default color when error.
+let color1 = UIColor(hexString: "#66ccff")// default alpha = 1
+let color2 = UIColor(hexString: "#66ccff", alpha: 0.5)// with alpha param
+let color3 = UIColor(hexString: "66ccff", alpha: 0.5)// without #
+let color4 = UIColor(hexString: "6cf", alpha: 0.5)// short version
+let color5 = UIColor(hexString: "#error", defaultColor: UIColor.redColor())// return default color when error.
