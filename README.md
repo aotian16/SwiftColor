@@ -2,6 +2,8 @@
 
 Extension for UIColor
 
+learn from [thii](https://github.com/thii) /  [SwiftColors](https://github.com/thii/SwiftColors)
+
 # Demo
 
 ``` swift
